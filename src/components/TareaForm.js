@@ -29,6 +29,7 @@ function TareaForm(props) {
                             value={inputText}
                             onChange={handleInput}
                             placeholder="What's new to be done today?"
+                            autoFocus
                         />
                     </div>
                     <div className="col d-flex">

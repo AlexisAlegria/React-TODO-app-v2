@@ -11,7 +11,7 @@ const Tarea = (props) => {
     }
     const submitEdit = (e) =>{
         e.preventDefault();
-        props.editar(props.id, editText);
+        props.updateToDoList(props.id, editText);
         setEditText('');
         setModoEdit(false);
     }
@@ -46,7 +46,7 @@ const Tarea = (props) => {
             <div className="container px-0">
                 <form className="form row px-0" onSubmit={submitEdit}>
                     <div className="col-md-6">
-                        <input type="text" className="form-control" value={editText} onChange={handleEdit}/>
+                        <input type="text" className="form-control edit-input" value={editText} onChange={handleEdit} autoFocus/>
                     </div>
                     <div className="col-auto px-0">
                         <button type="submit" className="btn btn-secondary mb-3">Save Change</button>

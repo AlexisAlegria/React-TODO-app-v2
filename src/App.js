@@ -14,7 +14,7 @@ function App() {
     const listaFiltrada = listaTareas.filter((e, index) => index !== id);
     setListaTareas(listaFiltrada);
   };
-  const actualizarTarea = (id, tarea) => {
+  const updateToDoList = (id, tarea) => {
     const listaActualizada = listaTareas.map((e, index) => {
       if (index === id) {
         e = tarea;
@@ -35,7 +35,7 @@ function App() {
               <Tarea
                 id={index}
                 tarea={e}
-                editar={actualizarTarea}
+                updateToDoList={updateToDoList}
                 borrar={borrar}
               />
             ))}

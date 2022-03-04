@@ -54,7 +54,6 @@ i:hover {
 .form .btn:hover {
   background: orangered;
   border-color: orangered;
-  font-style: italic;
 }
 .glasses {
   font-size: 30px;
@@ -65,5 +64,8 @@ i:hover {
   font-weight: 700;
 }
 .main-input:focus{
+  background-color: lightgoldenrodyellow !important;
+}
+.edit-input:focus{
   background-color: lightgoldenrodyellow !important;
 }
