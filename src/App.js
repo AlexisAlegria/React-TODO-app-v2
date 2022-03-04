@@ -10,7 +10,7 @@ function App() {
     setListaTareas([tarea, ...listaTareas]);
   };
 
-  const borrar = (id) => {
+  const deleteToDoBtn = (id) => {
     const listaFiltrada = listaTareas.filter((e, index) => index !== id);
     setListaTareas(listaFiltrada);
   };
@@ -28,7 +28,7 @@ function App() {
     <div className="container mt-5">
       <div className="row justify-content-center">
         <div className="col-10 col-md-6 text-center main-box">
-          <h1>todos</h1>
+          <h1>React Todos App</h1>
           <TareaForm addTodo={addTodo} />
           <ul className="list-group pb-3">
             {listaTareas.map((e, index) => (
@@ -36,7 +36,7 @@ function App() {
                 id={index}
                 tarea={e}
                 updateToDoList={updateToDoList}
-                borrar={borrar}
+                deleteToDoBtn={deleteToDoBtn}
               />
             ))}
             <li className="list-group-item counter" id="task-counter">

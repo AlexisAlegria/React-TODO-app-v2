@@ -32,7 +32,7 @@ function TareaForm(props) {
                             autoFocus
                         />
                     </div>
-                    <div className="col d-flex">
+                    <div className="col d-flex mt-2">
                         <button type="submit" className="btn btn-dark">
                             Add task
                         </button>

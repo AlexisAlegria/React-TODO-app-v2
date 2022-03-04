@@ -16,7 +16,7 @@ const Tarea = (props) => {
         setModoEdit(false);
     }
     const deleteTodo = () =>{
-        props.borrar(props.id);
+        props.deleteToDoBtn(props.id);
 
     }
     return (
