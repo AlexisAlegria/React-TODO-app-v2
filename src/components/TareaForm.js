@@ -5,14 +5,14 @@ function TareaForm(props) {
     const [inputText, setInputText] = useState("");
     const [validacion, setValidacion] = useState(true);
 
-    const manejarFormulario = (e) => {
+    const handleInput = (e) => {
         setInputText(e.target.value);
     };
 
     const submit = (e) => {
         e.preventDefault();
         if (inputText.trim() !== "") {
-            props.nuevaTarea(inputText);
+            props.addTodo(inputText);
             setInputText("");
             setValidacion(true);
         } else {
@@ -25,9 +25,9 @@ function TareaForm(props) {
                 <form className="form d-flex flex-column justify-content-between mb-3" onSubmit={submit}>
                     <div className="col-12">
                         <input
-                            className="form-control"
+                            className="form-control main-input"
                             value={inputText}
-                            onChange={manejarFormulario}
+                            onChange={handleInput}
                             placeholder="What's new to be done today?"
                         />
                     </div>

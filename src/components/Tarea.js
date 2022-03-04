@@ -3,10 +3,10 @@ import React, {useState} from 'react';
 const Tarea = (props) => {
     const [modoEdit, setModoEdit] = useState(false);
     const [editText, setEditText] = useState('');
-    const editar = () =>{
+    const editTodo = () =>{
         setModoEdit(true);
     }
-    const manejarEdit = (e) =>{
+    const handleEdit = (e) =>{
         setEditText(e.target.value);
     }
     const submitEdit = (e) =>{
@@ -15,7 +15,7 @@ const Tarea = (props) => {
         setEditText('');
         setModoEdit(false);
     }
-    const borrarTarea = () =>{
+    const deleteTodo = () =>{
         props.borrar(props.id);
 
     }
@@ -23,20 +23,20 @@ const Tarea = (props) => {
         <>
         {
             !modoEdit ?
-            <li className="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            <li className="list-group-item d-flex justify-content-between align-items-center">
                 <span className="span">
                     {props.tarea}
                 </span>
                 <div>
                 <span>
                     <i
-                        onClick={editar}
+                        onClick={editTodo}
                         className="far fa-edit">
                     </i>
                 </span>
                 <span>
                     <i
-                        onClick={borrarTarea}
+                        onClick={deleteTodo}
                         className="far fa-trash-alt">
                     </i>
                 </span>
@@ -46,7 +46,7 @@ const Tarea = (props) => {
             <div className="container px-0">
                 <form className="form row px-0" onSubmit={submitEdit}>
                     <div className="col-md-6">
-                        <input type="text" className="form-control" value={editText} onChange={manejarEdit}/>
+                        <input type="text" className="form-control" value={editText} onChange={handleEdit}/>
                     </div>
                     <div className="col-auto px-0">
                         <button type="submit" className="btn btn-secondary mb-3">Save Change</button>

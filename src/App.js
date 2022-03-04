@@ -6,7 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   const [listaTareas, setListaTareas] = useState([]);
 
-  const nuevaTarea = (tarea) => {
+  const addTodo = (tarea) => {
     setListaTareas([tarea, ...listaTareas]);
   };
 
@@ -29,7 +29,7 @@ function App() {
       <div className="row justify-content-center">
         <div className="col-10 col-md-6 text-center main-box">
           <h1>todos</h1>
-          <TareaForm nuevaTarea={nuevaTarea} />
+          <TareaForm addTodo={addTodo} />
           <ul className="list-group pb-3">
             {listaTareas.map((e, index) => (
               <Tarea
